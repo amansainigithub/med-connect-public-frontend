@@ -1,1 +1,210 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.body-bg-color
+{
+    background-color:rgb(245, 245, 249) 
+}
+
+.theme_bg_color{
+    background-color: #F7F9F9;
+    }
+    
+
+.text-color
+{
+    color: #696cff;
+}
+
+
+/* Font-Size */
+.fontSize8{
+    font-size: 8px;
+}
+
+.fontSize9{
+    font-size: 9px;
+}
+
+
+.fontSize10{
+    font-size: 10px;
+}
+
+
+.fontSize11{
+    font-size: 11px;
+}
+
+.fontSize12{
+    font-size: 12px;
+}
+.fontSize13{
+    font-size: 13px;
+}
+.fontSize14{
+    font-size: 14px;
+}
+.fontSize15{
+    font-size: 15px;
+}
+.fontSize16{
+    font-size: 16px;
+}
+.fontSize17{
+    font-size: 17px;
+}
+.fontSize18{
+    font-size: 18px;
+}
+.fontSize19{
+    font-size: 19px;
+}
+.fontSize20{
+    font-size: 20px;
+}
+.fontSize25{
+    font-size: 25px;
+}
+
+.fontSize30{
+    font-size: 30px;
+}
+
+.fontSize33{
+    font-size: 33px;
+}
+
+.fontSize35{
+    font-size: 35px;
+}
+
+.fontSize40{
+    font-size: 40px;
+}
+
+.borderRadius10
+{
+    border-radius: 10px;
+}
+
+
+
+
+/* Form Width */
+.formWidth200
+{
+    width: 200px;
+}
+
+.formWidth220
+{
+    width: 220px;
+}
+.formWidth240
+{
+    width: 240px;
+}
+.formWidth260
+{
+    width: 260px;
+}
+.formWidth280
+{
+    min-width: 40%;
+}
+
+.formWidth300
+{
+    width: 300px;
+}
+.formWidth320
+{
+    width: 320px;
+}
+
+.formWidth340
+{
+    width: 340px;
+}
+.formWidth360
+{
+    width: 360px;
+}
+
+
+.button-head-Design
+{
+    background-color: #DADCFF;
+    border-left: 5px solid #242DEB;
+}
+
+.bg-update{
+    background-color: #BDE1FF;
+}
+
+.bg-delete{
+    background-color: #FFBDB2;
+}
+
+.bg-uploadFile
+{
+    background-color: #C3FCAF;
+}
+
+.border-radius20
+{
+  border-radius: 20px!important;
+}
+
+.border-radius15
+{
+  border-radius: 15px!important;
+}
+
+.border-radius10
+{
+  border-radius: 10px!important;
+}
+
+.border-radius25
+{
+  border-radius: 25px!important;
+}
+
+.border-radius30
+{
+  border-radius: 30px!important;
+}
+
+.size-bg-color
+{
+    background-color: #FDEBD0;
+}
+
+
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #9FBDF5
+    ; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9FBDF5
+  }
