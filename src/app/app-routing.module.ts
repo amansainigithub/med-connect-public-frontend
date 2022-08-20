@@ -11,19 +11,19 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AuthLoginGuard } from './authGuards/auth-login.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   // { path: 'user', component: BoardUserComponent },
   // { path: 'mod', component: BoardModeratorComponent },
   // { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { 
-    path: 'admin',canActivate:[AuthLoginGuard] ,
+    path: 'user',canActivate:[AuthLoginGuard] ,
       children: [
                   //CATEGORY
-                  { path: '', component: BoardAdminComponent},
+                  { path: '', component: BoardUserComponent},
       ]
   }
 ];

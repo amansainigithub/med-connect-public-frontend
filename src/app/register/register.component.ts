@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { MedRoleService } from '../_services/med-role-service/med-role.service';
 
 @Component({
   selector: 'app-register',
@@ -7,24 +8,29 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
   form: any = {
     username: null,
     email: null,
     password: null
   };
+
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+  selected = '';
+  medRoleList:any;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService , private mrs:MedRoleService) { }
 
   ngOnInit(): void {
+    this.getMedRoles()
   }
 
   onSubmit(): void {
     const { username, email, password } = this.form;
 
-    this.authService.register(username, email, password).subscribe(
+    this.authService.register(username, email, password, this.selected).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
@@ -36,4 +42,22 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
+  getMedRoles()
+  {
+      this.mrs.getMedRoles().subscribe(
+        (res:any)=>{
+          this.medRoleList = res.data;
+        },
+       (err:any)=>{
+        console.log(err);
+        
+        }
+      )
+  }
+
+
+
+
+
 }
