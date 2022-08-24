@@ -1,10 +1,15 @@
 <div class="col-md-12">
-  <div class="card card-container">
-    <img
+  <div class="card card-container border-0">
+    <!-- <img
       id="profile-img"
       src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
       class="profile-img-card"
-    />
+    /> -->
+
+    <h2 class="d_45">
+      Login
+    </h2>
+
     <form
       *ngIf="!isLoggedIn"
       name="form"
@@ -50,14 +55,18 @@
           <div *ngIf="password.errors.minlength">
             Password must be at least 6 characters
           </div> -->
+          Password is required!
         </div>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block">
+
+      <div class="container text-center mt-4 " style="margin: auto">
+        <button mat-raised-button color="primary" class="width100"> 
+          <i class="bi bi-key-fill"></i> 
           Login
         </button>
       </div>
-      <div class="form-group">
+
+      <div class="form-group mt-2">
         <div
           class="alert alert-danger"
           role="alert"
@@ -67,6 +76,13 @@
         </div>
       </div>
     </form>
+
+    <div   *ngIf="!isLoggedIn" class="container text-center mt-2 " style="margin: auto">
+      <a routerLink="/forgot-password" mat-stroked-button color="primary" class="width100"> 
+        <i class="bi bi-patch-question-fill"></i>
+         Forget-password
+      </a>
+    </div>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
       Logged in as {{ roles }}.

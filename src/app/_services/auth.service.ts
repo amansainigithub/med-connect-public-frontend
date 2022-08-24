@@ -40,4 +40,18 @@ export class AuthService {
   }
 
 
+  forgetPassword(data:any)
+  {
+    return  this.http.post(AUTH_API + "forgotPassword",data);
+  }
+
+
+  forgotPasswordOtpVerify(data:any)
+  {
+    return  this.http.post(AUTH_API + "forgotPasswordOtpVerify",data);
+  }
+
+
+
+
 }

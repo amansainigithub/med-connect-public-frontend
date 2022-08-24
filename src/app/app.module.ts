@@ -13,8 +13,14 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangeForgotPasswordComponent } from './change-forgot-password/change-forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    ForgotPasswordComponent,
+    ChangeForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +41,10 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     FormsModule,
     HttpClientModule,
     MatSelectModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [authInterceptorProviders],

@@ -208,3 +208,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   ::-webkit-scrollbar-thumb:hover {
     background: #9FBDF5
   }
+
+  .width100
+  {
+    width: 100%;
+  }
+
+  .width90
+  {
+    width: 100%;
+  }
+
+  
+  .width80
+  {
+    width: 100%;
+  }
+
+  .width70
+  {
+    width: 100%;
+  }
+
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
