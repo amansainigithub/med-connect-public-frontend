@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
@@ -15,9 +16,20 @@ export class AppComponent {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private spinner: NgxSpinnerService
+    ) { }
 
   ngOnInit(): void {
+    /** spinner starts on init */
+    // this.spinner.show();
+
+    // setTimeout(() => {
+      /** spinner ends after 5 seconds */
+    //   this.spinner.hide();
+    // }, 5000);
+  
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {

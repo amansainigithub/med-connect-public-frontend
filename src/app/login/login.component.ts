@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -17,7 +18,10 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(
+    private authService: AuthService, 
+    private tokenStorage: TokenStorageService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -27,6 +31,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    //Sprinner show
+    this.spinner.show();
+
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe(
@@ -39,10 +46,16 @@ export class LoginComponent implements OnInit {
         this.roles = this.tokenStorage.getUser().roles;
        //this.reloadPage();
        window.location.href = "/user"
+        
+        //Sprinner hide
+        this.spinner.hide();
       },
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+
+         //Sprinner hide
+         this.spinner.hide();
       }
     );
   }

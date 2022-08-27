@@ -25,11 +25,13 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(username: string, email: string, password: string,selected:any): Observable<any> {
+  register(username: string, email: string, password: string, firstname: string, surname: string,selected:any): Observable<any> {
 
     const regForm = {
       username,
       email,
+      firstname,
+      surname,
       password, 
       "role": [
         selected

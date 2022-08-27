@@ -209,6 +209,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: #9FBDF5
   }
 
+
+ 
+
   .width100
   {
     width: 100%;
@@ -216,19 +219,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   .width90
   {
-    width: 100%;
+    width: 90%;
   }
 
   
   .width80
   {
-    width: 100%;
+    width: 80%;
   }
 
   .width70
   {
-    width: 100%;
+    width: 70%;
   }
+
+  .width60
+  {
+    width: 60%;
+  }
+
+  .width50
+  {
+    width: 50%;
+  }
+
+  .width40
+  {
+    width: 40%;
+  }
+
+  .width20
+  {
+    width: 20%;
+  }
+
+
+  .width30
+  {
+    width: 30%;
+  }
+
 
 
   .vertical-center {
@@ -237,4 +267,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+  }
+
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+
+  .theme-text-color
+  {
+    color: #6F5FFF;
+  }
+  .theme-bg-color
+  {
+    background-color: #6F5FFF;
+  }
+  .theme-bg-with-hover
+  {
+    background-color: #6F5EFF;
+    color: white
+  }
+
+  .theme-bg-with-hover:hover {
+    color: #DEDCF0;
   }
