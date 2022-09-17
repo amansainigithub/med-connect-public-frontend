@@ -23,6 +23,7 @@ import { PasswordChangeSuccessComponent } from './password-change-success/passwo
 import {MatCardModule} from '@angular/material/card';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
+import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { EmailVerifySuccessComponent } from './email-verify-success/email-verify
     ForgotPasswordComponent,
     PasswordChangeSuccessComponent,
     EmailVerifySuccessComponent,
+    ResendEmailLinkComponent,
   ],
   imports: [
     BrowserModule,

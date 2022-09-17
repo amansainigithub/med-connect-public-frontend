@@ -68,21 +68,20 @@
 
       <div class="form-group mt-2">
         <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="f.submitted && isLoginFailed">
-          Login failed: {{ errorMessage }}
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && isLoginFailed">
+            Login failed: {{ errorMessage }}
 
-          <div  class="container text-center mt-2 " style="margin: auto">
-            <a routerLink="/forgot-password" mat-stroked-button color="primary" class="width100"> 
-              <i class="px-2 bi bi-envelope-fill"></i>
-               Resend Email Link
-            </a>
-          </div>
+            <div  class="container text-center mt-2 " style="margin: auto">
+              <button routerLink="/resend-email-link" mat-stroked-button color="primary" class="width100"> 
+                <i class="px-2 bi bi-envelope-fill"></i>
+                Resend Email Link
+              </button>
+            </div>
 
         </div>
-        
-    
+
       </div>
     </form>
 

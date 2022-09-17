@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
+  isResendEmail = false;
   roles: string[] = [];
 
   constructor(
@@ -63,4 +64,6 @@ export class LoginComponent implements OnInit {
   reloadPage(): void {
     window.location.reload();
   }
+
+ 
 }

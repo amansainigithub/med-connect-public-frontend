@@ -1,0 +1,63 @@
+
+<mat-card *ngIf="!isresendEmailLink" class="container center mt-5 p-5" style="max-width: 40rem;">
+
+
+            <div class="text-center">
+                <img src="../../assets/email images/email.png" height="50" width="50" alt="med connect email image">
+            </div>
+
+            <h3 class="text-center">Email Resend Link</h3>
+
+            <p>
+                Looks Like the Varification Link is Expired. Not to worry we can send the Link again
+            </p>
+
+           <div class="card center border-0" style="max-width: 24rem;">
+                   
+                    <form
+                        name="form"
+                        (ngSubmit)=" onSubmit()"
+                        novalidate >
+
+
+                    <div class="form-group">
+                    <label for="username"></label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="username"
+                        placeholder="Enter Your Email"
+                        [(ngModel)]="resendLinkForm.username"
+                        required
+                        #username="ngModel"/> </div>
+
+
+                    <div class="container text-center mt-1 " style="margin: auto">
+                        <button mat-stroked-button color="primary" class="width100"> 
+                            <i class="bi bi-envelope-check"></i>
+                        Resend Email
+                        </button>
+                    </div>
+
+                    </form>   
+
+            </div>
+
+     
+
+</mat-card>
+
+<div class="container center" *ngIf="isresendEmailLink" >
+   <div class="alert alert-success ">
+        <p class="text-center">
+            Resend Link Send Successfully | Please Check Your Email Id
+        </p>
+
+       <div class="text-center">
+        <button routerLink="/login" mat-raised-button color="primary" >
+            Back To Login
+        </button>
+       </div>
+
+   </div>
+</div>

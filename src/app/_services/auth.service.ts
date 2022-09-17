@@ -53,6 +53,10 @@ export class AuthService {
     return  this.http.post(AUTH_API + "forgotPasswordOtpVerify",data);
   }
 
+  resendEmailLink(username:any): Observable<any> {
+      return this.http.post(AUTH_API + 'resendEmailLink/'+username, httpOptions);
+  }
+  
 
 
 
