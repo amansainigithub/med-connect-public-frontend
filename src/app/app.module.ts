@@ -22,6 +22,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { PasswordChangeSuccessComponent } from './password-change-success/password-change-success.component';
 import {MatCardModule} from '@angular/material/card';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     BoardUserComponent,
     ForgotPasswordComponent,
     PasswordChangeSuccessComponent,
+    EmailVerifySuccessComponent,
   ],
   imports: [
     BrowserModule,

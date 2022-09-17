@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from '../_services/auth.service';
 import { MedRoleService } from '../_services/med-role-service/med-role.service';
 
@@ -23,30 +24,34 @@ export class RegisterComponent implements OnInit {
   selected = '';
   medRoleList:any;
 
-  constructor(private authService: AuthService , private mrs:MedRoleService) { }
+  constructor(private authService: AuthService , 
+              private mrs:MedRoleService, 
+              private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.getMedRoles()
   }
 
   onSubmit(): void {
+        //Sprinner show
+       this.spinner.show();
+
     const { username, email, password , firstname , surname } = this.form;
-
-    console.log(this.form);
-
-    console.log();
-    
-    
 
     this.authService.register(username, email, password, firstname, surname, this.selected).subscribe(
       data => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+
+        //Sprinner hide
+        this.spinner.hide();
       },
       err => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
+
+        //Sprinner hide
+        this.spinner.hide();
       }
     );
   }

@@ -70,10 +70,19 @@
         <div
           class="alert alert-danger"
           role="alert"
-          *ngIf="f.submitted && isLoginFailed"
-        >
+          *ngIf="f.submitted && isLoginFailed">
           Login failed: {{ errorMessage }}
+
+          <div  class="container text-center mt-2 " style="margin: auto">
+            <a routerLink="/forgot-password" mat-stroked-button color="primary" class="width100"> 
+              <i class="px-2 bi bi-envelope-fill"></i>
+               Resend Email Link
+            </a>
+          </div>
+
         </div>
+        
+    
       </div>
     </form>
 

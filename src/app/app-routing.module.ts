@@ -9,6 +9,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { AuthLoginGuard } from './authGuards/auth-login.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { PasswordChangeSuccessComponent } from './password-change-success/password-change-success.component';
+import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'password-change-success', component: PasswordChangeSuccessComponent },
+  { path: 'email-verify-success', component: EmailVerifySuccessComponent },
 
 
   // { path: 'user', component: BoardUserComponent },
