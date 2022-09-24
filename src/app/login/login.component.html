@@ -66,23 +66,26 @@
         </button>
       </div>
 
-      <div class="form-group mt-2">
+      <div class="form-group mt-2" *ngIf="errorStatus == 400" >
         <div
             class="alert alert-danger"
             role="alert"
             *ngIf="f.submitted && isLoginFailed">
             Login failed: {{ errorMessage }}
-
-            <div  class="container text-center mt-2 " style="margin: auto">
-              <button routerLink="/resend-email-link" mat-stroked-button color="primary" class="width100"> 
-                <i class="px-2 bi bi-envelope-fill"></i>
-                Resend Email Link
-              </button>
-            </div>
-
         </div>
-
       </div>
+
+      <div class="form-group mt-2 alert alert-danger" *ngIf="errorStatus == 500" >
+        <div  class="container text-center mt-2 " style="margin: auto">
+          <p>Email Not Verified | Please Verify your Email-Id</p>
+          <button routerLink="/resend-email-link" mat-stroked-button color="primary" class="width100"> 
+            <i class="px-2 bi bi-envelope-fill"></i>
+            Resend Email Link
+          </button>
+        </div>
+      </div>
+
+     
     </form>
 
     <div   *ngIf="!isLoggedIn" class="container text-center mt-2 " style="margin: auto">

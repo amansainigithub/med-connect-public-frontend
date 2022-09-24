@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   isResendEmail = false;
+  errorStatus:any;
   roles: string[] = [];
 
   constructor(
@@ -45,13 +46,16 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-       //this.reloadPage();
-       window.location.href = "/user"
+
+        //this.reloadPage();
+        window.location.href = "/user"
         
         //Sprinner hide
         this.spinner.hide();
       },
       err => {
+          console.log(err);
+        this.errorStatus = err.status;  
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
 
