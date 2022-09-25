@@ -1,0 +1,122 @@
+.div1
+{
+   background-image:radial-gradient(70% 100%  at top left,transparent , #fff 92.5%),
+  linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+
+
+
+ /* background-image:radial-gradient(closest-side at 100px 100px , darkorange , yellow); 
+ background-image:radial-gradient(farthest-corner at 100px 100px , darkorange , white);
+ background-repeat:no-repeat;
+ background-size:120% 100%; */
+
+
+
+/* background-image:
+   radial-gradient(120% 100% at top left,transparent 92%, #fff 92.5%),
+   linear-gradient(135deg, #51a595 0%, #3fcfa2 100%);
+}
+ */
+
+ /* radial-gradient(50% 100%  at top left,transparent , #fff 92.5%),
+linear-gradient(to bottom, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc, #0000dc); */
+}
+
+
+/* #glass
+{
+    background: rgba(0,0,0,0.8);
+   border-radius: 15px;
+   backdrop-filter: blur(50px);
+   border: 2px solid transparent;
+}
+
+ */
+
+body
+{
+margin: 0;
+padding: 0;
+font-family: montserrat;
+}
+
+
+
+
+
+
+
+/* ===========================================================
+============================================================ */
+
+
+.glass
+{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    backdrop-filter: blur(60px);
+    border-radius: 20px;
+    background-clip: padding-box;
+}
+
+
+.commStrong
+{
+    font-size: 75px;
+    font-weight: 800;
+    color: #34495e;
+    line-height: 1.1;
+    margin-top: 0px;
+    font-family: Franklin Gothic Medium,Arial Narrow,Arial,sans-serif;
+}
+
+.docPara
+{
+    font-size: 18px;
+}
+
+/* CSS */
+.button100 {
+    background-color: initial;
+    background-image: linear-gradient(#8614f8 0, #760be0 100%);
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -4px;
+    text-decoration: none;
+    outline: 0;
+    text-align: center;
+    transition: all .3s cubic-bezier(.05, .03, .35, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: bottom;
+    width: 190px;
+  }
+  
+  .button100:hover {
+    opacity: .7;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .button100 {
+      font-size: 14px;
+      height: 55px;
+      line-height: 55px;
+      width: 150px;
+    }
+  }

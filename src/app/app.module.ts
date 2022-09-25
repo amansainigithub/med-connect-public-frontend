@@ -24,6 +24,7 @@ import {MatCardModule} from '@angular/material/card';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
 import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.
     BrowserAnimationsModule,
     MatCardModule,
     NgxSpinnerModule,
-     NgxSpinnerModule
+     NgxSpinnerModule,
+     MatExpansionModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

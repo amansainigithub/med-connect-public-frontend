@@ -6,43 +6,130 @@
 </ngx-spinner>
 
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark " style="background-color:red">
-    <a href="#" class="navbar-brand mx-3">Med Connect</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/home" class="nav-link" routerLink="home">Home </a>
-      </li>
-      <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-      </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-      </li>
-      <li class="nav-item">
-        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-      </li>
-    </ul>
 
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-      <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
-      </li>
-    </ul>
+        <nav class="navbar navbar-expand shadow-sm p-3">
+          <a href="#" class="navbar-brand mx-3">Med Connect</a>
 
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-      <li class="nav-item">
-        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
-      </li>
-      <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">LogOut</a>
-      </li>
-    </ul>
-  </nav>
+          <ul class="navbar-nav mr-auto" routerLinkActive="active">
+            <li class="nav-item">
+              <a href="/home" class="nav-link" routerLink="home">Home </a>
+            </li>
+            <li class="nav-item" *ngIf="showAdminBoard">
+              <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+            </li>
+            <li class="nav-item" *ngIf="showModeratorBoard">
+              <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+            </li>
+            <li class="nav-item">
+              <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+            </li>
+          </ul>
 
-  <div >
-    <router-outlet></router-outlet>
-  </div>
+          <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+            <li class="nav-item">
+              <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a href="/login" class="nav-link" routerLink="login">Login</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+            <li class="nav-item">
+              <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+            </li>
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()">LogOut</a>
+            </li>
+          </ul>
+        </nav>
+
+
+
+
+     <div class="container-fluid" *ngIf="isLoggedIn">
+
+      <div class="row">
+
+        <div class="col-md-2 "  style="overflow: scroll;overflow-x: hidden;overflow-y: auto;height: 3000px;" >
+
+          <mat-drawer-container >
+
+            <mat-drawer  style="border-top-right-radius: 20px;"  #drawer opened="true" mode="side" >
+
+             <div id="accordionFlushExample" class="mx-2">
+                <a routerLink="/admin/med-users"  class="mx-2" mat-flat-button class="accordion-button collapsed matButtonApp textColor" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne " aria-expanded="false" aria-controls="flush-collapseOne">
+                  <i class="bi bi-person-bounding-box"></i>
+                  <span class="mx-3">Med Users</span>
+                </a>
+
+                  <!-- CATGEORY -->
+                  <div id="flush-collapseOne" class="accordion-collapse collapse mx-3" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div>
+                        <a routerLink="/login"  mat-button  class="accordion-body matButtonSubMenu textColor ">
+                          <i class="bi bi-dot primary" ></i>
+                            Med User List  
+                        </a>
+                      </div>
+                      <div>
+                        <a routerLink="/panel/category-order"  mat-button  class="accordion-body matButtonSubMenu textColor ">
+                          <i class="bi bi-dot primary" ></i>
+                            Category Order
+                        </a>
+                      </div>
+                  </div>
+              </div>
+
+              <!---------------- MED-ROLE ------------------>
+              <div>
+                <a mat-button  routerLink="/register" class="mx-2 matButtonApp textColor" >
+                  <span>
+                    <i class="bi bi-bounding-box-circles fontSize18"></i>
+                  </span>
+                  <span class="mx-3 fontSize14">
+                   Med Role
+                  </span>
+                </a>
+             </div>
+
+             <div>
+                  <a mat-button  routerLink="/panel/profile" class="mx-2 matButtonApp textColor" >
+                    <span>
+                      <i class="bi bi-house-door-fill fontSize18"></i>
+                    </span>
+                    <span class="mx-3 fontSize14">
+                     Profile
+                    </span>
+                  </a>
+             </div>
+
+            </mat-drawer>
+
+          </mat-drawer-container>
+          
+        </div>
+
+
+        <!-- Dynamic Content -->
+          <div class="col-md-7 ">
+            <mat-drawer-content class="theme_bg_color">
+              <div style="height: 88vh;width: 100%;">
+                <router-outlet></router-outlet>
+              </div>
+            </mat-drawer-content>
+          </div>
+
+
+          <div class="col-md-3 ">
+              <p>TEST</p>
+          </div>
+      </div>
+
+     </div>
+
+     <div  *ngIf="!isLoggedIn">
+        <router-outlet></router-outlet>
+     </div>
+
 </div>
+

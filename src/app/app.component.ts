@@ -9,7 +9,7 @@ import { TokenStorageService } from './_services/token-storage.service';
 })
 export class AppComponent {
   title = 'MedConnect-frontend';
-
+  panelOpenState = false;
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
