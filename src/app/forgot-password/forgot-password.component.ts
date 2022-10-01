@@ -36,7 +36,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   onSubmit(){
-
+    
       //Sprinner show
       this.spinner.show();
     

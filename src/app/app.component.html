@@ -5,15 +5,47 @@
     <p style="font-size: 15px; color: white">please wait...</p>
 </ngx-spinner>
 
-<div id="app">
+<div id="app" >
 
-        <nav class="navbar navbar-expand shadow-sm p-3">
+    <!-- <p >
+      <mat-toolbar style="background-color: white;" class="shadow-sm">
+      
+        <span>
+            <a href="/" mat-icon-button class="example-icon favorite-icon mx-4" aria-label="Example icon-button with heart icon">
+              Med Connect
+            </a>
+        </span>
+        
+        <span class="example-spacer"></span>
+
+          <div *ngIf="!isLoggedIn" >
+            <a href="/register" mat-icon-button class="example-icon favorite-icon mx-4" aria-label="Example icon-button with heart icon">
+               <mat-icon>favorite</mat-icon> -->
+            <!-- Sign Up
+            </a>
+            <a href="/login" mat-icon-button class="example-icon mr-3" aria-label="Example icon-button with share icon">
+              Login
+            </a>
+          </div>
+
+
+          <div *ngIf="isLoggedIn" >
+            <a  href="/profile" routerLink="profile" mat-icon-button class="example-icon favorite-icon mx-4" aria-label="Example icon-button with heart icon">
+               <mat-icon>favorite</mat-icon> -->
+              <!-- profile
+            </a>
+            <a href class="nav-link" (click)="logout()" mat-icon-button class="example-icon mr-3" aria-label="Example icon-button with share icon">
+              Logout
+            </a>
+          </div>
+
+      </mat-toolbar> -->
+    <!-- </p>   -->
+
+        <nav class="navbar navbar-expand-sm shadow-sm p-3">
           <a href="#" class="navbar-brand mx-3">Med Connect</a>
 
           <ul class="navbar-nav mr-auto" routerLinkActive="active">
-            <li class="nav-item">
-              <a href="/home" class="nav-link" routerLink="home">Home </a>
-            </li>
             <li class="nav-item" *ngIf="showAdminBoard">
               <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
             </li>
@@ -25,7 +57,7 @@
             </li>
           </ul>
 
-          <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+          <ul class="navbar-nav ml-auto" style="float: left;" *ngIf="!isLoggedIn">
             <li class="nav-item">
               <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
             </li>
@@ -49,13 +81,42 @@
 
      <div class="container-fluid" *ngIf="isLoggedIn">
 
-      <div class="row">
+      <div class="row" >
 
         <div class="col-md-2 "  style="overflow: scroll;overflow-x: hidden;overflow-y: auto;height: 3000px;" >
 
           <mat-drawer-container >
 
             <mat-drawer  style="border-top-right-radius: 20px;"  #drawer opened="true" mode="side" >
+
+              <!-- <div class="container text-center mt-4">
+                <img src="../assets/email images/email.png" alt="Avatar" class="avatar">
+              </div> -->
+             <div class="container text-center mt-4">
+
+              <div>
+                <img src="../assets/avator-images/male.png" height="50" width="50" style="border-radius: 50%;" *ngIf="!profileUrl" class="imgDecor mt-4"><br>
+
+                <img [src]="profileUrl" *ngIf="imageSrc" height="50" width="50" style="border-radius: 50%; object-fit: cover;"  class="imgDecor">
+            </div>
+                  
+                  <input type="file" name="fileToUpload" id="fileToUpload" (change)="onChange($event)"  >
+               
+             </div>
+
+          
+
+               <!-- PROFILE -->
+              <div class="mt-3" >
+                <a mat-button  routerLink="/register" class="mx-2 matButtonApp textColor" >
+                  <span>
+                    <i class="bi bi-bounding-box-circles fontSize18"></i>
+                  </span>
+                  <span class="mx-3 fontSize14">
+                   Profile
+                  </span>
+                </a>
+             </div>
 
              <div id="accordionFlushExample" class="mx-2">
                 <a routerLink="/admin/med-users"  class="mx-2" mat-flat-button class="accordion-button collapsed matButtonApp textColor" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne " aria-expanded="false" aria-controls="flush-collapseOne">

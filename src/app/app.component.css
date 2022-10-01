@@ -26,6 +26,13 @@
     margin-top: 8px;
   }
 
+  .avatar {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
 .textColor
 {
   color: #697a8d;
@@ -39,5 +46,42 @@
   }
 
 
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.profile-pic:hover {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10000;
+    color: black;
+    font-weight: bolder;
+    transition: all .3s ease;
+    text-decoration: none;
+}
 
+.profile-pic span {
+    display: inline-block;
+    padding-top: 1.0em;
+    padding-bottom: 4.5em;
+    font-size: 12px;
+}
+
+form input[type="file"] {
+          display: none;
+          cursor: pointer;
+ }

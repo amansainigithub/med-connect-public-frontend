@@ -25,6 +25,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
 import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     NgxSpinnerModule,
      NgxSpinnerModule,
-     MatExpansionModule
+     MatExpansionModule,
+     MatToolbarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

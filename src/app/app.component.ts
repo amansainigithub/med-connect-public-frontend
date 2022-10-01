@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TokenStorageService } from './_services/token-storage.service';
+import { UserProfileService } from './_services/user-profile-service/user-profile.service';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +16,15 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  email:any;
+  imageSrc: string = '';
+  file:any;
+  profileUrl:any;
 
   constructor(
-    private tokenStorageService: TokenStorageService,
-    private spinner: NgxSpinnerService
+            private tokenStorageService: TokenStorageService,
+            private spinner: NgxSpinnerService,
+            private ups:UserProfileService
     ) { }
 
   ngOnInit(): void {
@@ -33,13 +39,16 @@ export class AppComponent {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
+      
+      
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
+      
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
       this.username = user.username;
+      this.email = user.email;
     }
   }
 
@@ -47,4 +56,28 @@ export class AppComponent {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
-}
+
+
+  onChange(event:any){
+
+    const reader = new FileReader();
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.imageSrc = reader.result as string;
+      };
+      this.file=event.target.files[0];
+    }
+    this.ups.updateUserProfile(this.file,this.email).subscribe({
+      next:(res:any)=>{
+        this.profileUrl = res.profilePicUrl;
+        console.log("UPDATE PROFILE SUCCESS");
+      },error:(err:any)=>{
+        console.log(err.roor.message);
+      }
+    })
+  }
+
+  }
+
