@@ -79,11 +79,48 @@
 
 
 
-     <div class="container-fluid" *ngIf="isLoggedIn">
+     <div class="container" style="border-style: ridge;" *ngIf="isLoggedIn">
 
       <div class="row" >
 
-        <div class="col-md-2 "  style="overflow: scroll;overflow-x: hidden;overflow-y: auto;height: 3000px;" >
+        <div class="col-md-3 "  style="overflow: scroll;overflow-x: hidden;overflow-y: auto;height: 3000px;" >
+
+          <!-- ************************ PROFILE CARD START **************************** -->
+                <div class="card mt-4" style="max-width: 17rem;border-radius: 15px;">
+                  <img class="card-img-top" height="70px" style="object-fit: cover;border-top-left-radius: 15px;border-top-right-radius: 15px;" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Bologna">
+                  <div class="card-body text-center">
+                    <img class="avatar rounded-circle" height="100" width="100" style="object-fit: cover;" src="https://images.unsplash.com/photo-1543132220-3ec99c6094dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Bologna">
+                    <h4 class="">Robert Downey Jr.</h4>
+                    <h6 class="card-subtitle text-muted">Famous Actor</h6>
+                    <p class="card-text">Robert John Downey Jr.'career has included criticalal commercial success in middle age. </p>
+                    
+                    <a href="#" class="btn btn-outline-info">profile</a>
+                  </div>
+
+                  <div class="card-footer bg-white"  style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;">
+                    <div class="stats">
+                        <div class="stat">
+                          <span class="label">Following</span>
+                          <span class="value">56K</span>
+                        </div>
+                        <div class="stat">
+                          <span class="label">Followers</span>
+                          <span class="value">940</span>
+                        </div>
+                        <div class="stat">
+                          <span class="label">Likes</span>
+                          <span class="value">320</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+          <!-- ************************ PROFILE CARD END **************************** -->
+
+                
+
+
+                
+
 
           <mat-drawer-container >
 
@@ -94,11 +131,11 @@
               </div> -->
              <div class="container text-center mt-4">
 
-              <div>
-                <img src="../assets/avator-images/male.png" height="50" width="50" style="border-radius: 50%;" *ngIf="!profileUrl" class="imgDecor mt-4"><br>
+                <div>
+                  <img src="../assets/avator-images/male.png" height="50" width="50" style="border-radius: 50%;" *ngIf="!profileUrl" class="imgDecor mt-4"><br>
 
-                <img [src]="profileUrl" *ngIf="imageSrc" height="50" width="50" style="border-radius: 50%; object-fit: cover;"  class="imgDecor">
-            </div>
+                  <img [src]="profileUrl" *ngIf="imageSrc" height="50" width="50" style="border-radius: 50%; object-fit: cover;"  class="imgDecor">
+                </div>
                   
                   <input type="file" name="fileToUpload" id="fileToUpload" (change)="onChange($event)"  >
                
@@ -172,7 +209,7 @@
 
 
         <!-- Dynamic Content -->
-          <div class="col-md-7 ">
+          <div class="col-md-6 ">
             <mat-drawer-content class="theme_bg_color">
               <div style="height: 88vh;width: 100%;">
                 <router-outlet></router-outlet>
