@@ -79,7 +79,7 @@
 
 
 
-     <div class="container" style="" *ngIf="isLoggedIn">
+     <div class="container"  *ngIf="isLoggedIn">
 
       <div class="row" >
 
@@ -105,9 +105,8 @@
                           USER
                         </span>
                     </h6>
-                    <p class="card-text">Robert John Downey Jr.'career has included criticalal commercial success in middle age. </p>
+                    <p class="card-text">Robert John Downey Jr.'career has included  </p>
                     
-                    <a href="#" class="btn btn-outline-info">profile</a>
                   </div>
 
                   <div class="card-footer bg-white"  style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;">
@@ -127,98 +126,10 @@
                     </div>
                   </div>
                 </div>
+              </div>
           <!-- ************************ PROFILE CARD END **************************** -->
 
-                
-
-
-                
-
-
-          <mat-drawer-container >
-
-            <mat-drawer  style="border-top-right-radius: 20px;"  #drawer opened="true" mode="side" >
-
-              <!-- <div class="container text-center mt-4">
-                <img src="../assets/email images/email.png" alt="Avatar" class="avatar">
-              </div> -->
-             <div class="container text-center mt-4">
-
-                <div>
-                  <img src="../assets/avator-images/male.png" height="50" width="50" style="border-radius: 50%;" *ngIf="!profileUrl" class="imgDecor mt-4"><br>
-
-                  <img [src]="profileUrl" *ngIf="imageSrc" height="50" width="50" style="border-radius: 50%; object-fit: cover;"  class="imgDecor">
-                </div>
-                  
-                  <input type="file" name="fileToUpload" id="fileToUpload" (change)="onChange($event)"  >
-               
-             </div>
-
-          
-
-               <!-- PROFILE -->
-              <div class="mt-3" >
-                <a mat-button  routerLink="/register" class="mx-2 matButtonApp textColor" >
-                  <span>
-                    <i class="bi bi-bounding-box-circles fontSize18"></i>
-                  </span>
-                  <span class="mx-3 fontSize14">
-                   Profile
-                  </span>
-                </a>
-             </div>
-
-             <div id="accordionFlushExample" class="mx-2">
-                <a routerLink="/admin/med-users"  class="mx-2" mat-flat-button class="accordion-button collapsed matButtonApp textColor" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne " aria-expanded="false" aria-controls="flush-collapseOne">
-                  <i class="bi bi-person-bounding-box"></i>
-                  <span class="mx-3">Med Users</span>
-                </a>
-
-                  <!-- CATGEORY -->
-                  <div id="flush-collapseOne" class="accordion-collapse collapse mx-3" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div>
-                        <a routerLink="/login"  mat-button  class="accordion-body matButtonSubMenu textColor ">
-                          <i class="bi bi-dot primary" ></i>
-                            Med User List  
-                        </a>
-                      </div>
-                      <div>
-                        <a routerLink="/panel/category-order"  mat-button  class="accordion-body matButtonSubMenu textColor ">
-                          <i class="bi bi-dot primary" ></i>
-                            Category Order
-                        </a>
-                      </div>
-                  </div>
-              </div>
-
-              <!---------------- MED-ROLE ------------------>
-              <div>
-                <a mat-button  routerLink="/register" class="mx-2 matButtonApp textColor" >
-                  <span>
-                    <i class="bi bi-bounding-box-circles fontSize18"></i>
-                  </span>
-                  <span class="mx-3 fontSize14">
-                   Med Role
-                  </span>
-                </a>
-             </div>
-
-             <div>
-                  <a mat-button  routerLink="/panel/profile" class="mx-2 matButtonApp textColor" >
-                    <span>
-                      <i class="bi bi-house-door-fill fontSize18"></i>
-                    </span>
-                    <span class="mx-3 fontSize14">
-                     Profile
-                    </span>
-                  </a>
-             </div>
-
-            </mat-drawer>
-
-          </mat-drawer-container>
-          
-        </div>
+        
 
 
         <!-- Dynamic Content -->
