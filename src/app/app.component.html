@@ -79,7 +79,7 @@
 
 
 
-     <div class="container" style="border-style: ridge;" *ngIf="isLoggedIn">
+     <div class="container" style="" *ngIf="isLoggedIn">
 
       <div class="row" >
 
@@ -90,8 +90,21 @@
                   <img class="card-img-top" height="70px" style="object-fit: cover;border-top-left-radius: 15px;border-top-right-radius: 15px;" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Bologna">
                   <div class="card-body text-center">
                     <img class="avatar rounded-circle" height="100" width="100" style="object-fit: cover;" src="https://images.unsplash.com/photo-1543132220-3ec99c6094dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Bologna">
-                    <h4 class="">Robert Downey Jr.</h4>
-                    <h6 class="card-subtitle text-muted">Famous Actor</h6>
+                    <h4 class="" style="margin-bottom:6px ;">{{username}}</h4>
+                    <h6 class="card-subtitle text-muted"  *ngFor="let role of roles" >
+                        <span *ngIf="role == 'ROLE_DOCTOR'" >
+                          <i class="fa fa-stethoscope" style="font-size:11px;color:#E43B20"></i>
+                          DOCTOR
+                        </span>
+                        <span *ngIf="role == 'ROLE_STUDENT'">
+                          <i class="bi bi-person-heart" style="font-size: 13px;color:#E43B20 ;"></i>
+                          STUDENT
+                        </span>
+                        <span *ngIf="role == 'ROLE_USER'">
+                          <i class="fa fa-user-circle" style="font-size:11px;"></i>
+                          USER
+                        </span>
+                    </h6>
                     <p class="card-text">Robert John Downey Jr.'career has included criticalal commercial success in middle age. </p>
                     
                     <a href="#" class="btn btn-outline-info">profile</a>

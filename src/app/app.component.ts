@@ -11,7 +11,7 @@ import { UserProfileService } from './_services/user-profile-service/user-profil
 export class AppComponent {
   title = 'MedConnect-frontend';
   panelOpenState = false;
-  private roles: string[] = [];
+   roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;

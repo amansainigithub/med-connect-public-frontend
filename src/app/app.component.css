@@ -125,12 +125,17 @@ form input[type="file"] {
 }
 
 .card-footer{
-
-
   left: 0;
   width: 100%;
   bottom: 20px;
 }
+
+/* .card-footer{
+  position: absolute; 
+  left: 0;
+  width: 100%;
+  bottom: 20px;
+} */
 .stat{
   box-sizing: border-box;
   width: calc(100% / 3);
