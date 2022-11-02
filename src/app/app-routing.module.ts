@@ -11,6 +11,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { PasswordChangeSuccessComponent } from './password-change-success/password-change-success.component';
 import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
 import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.component';
+import { CampaignComponent } from './board-user/campaign/campaign/campaign.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
       children: [
                   //CATEGORY
                   { path: '', component: BoardUserComponent},
+                  { path: 'campaign', component: CampaignComponent},
       ]
   }
 ];

@@ -53,7 +53,7 @@
               <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
             </li>
             <li class="nav-item">
-              <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+              <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="/">Home</a>
             </li>
           </ul>
 
@@ -67,12 +67,26 @@
           </ul>
 
           <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+            
             <li class="nav-item">
-              <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+              <a href="/profile" class="nav-link" routerLink="/user/campaign">
+                Campaign
+              </a>
             </li>
+
             <li class="nav-item">
-              <a href class="nav-link" (click)="logout()">LogOut</a>
+              <a href="/profile" class="nav-link" routerLink="profile">
+                <!-- {{ username }} -->
+                Profile
+              </a>
             </li>
+
+            <li class="nav-item">
+              <a href class="nav-link" (click)="logout()">
+                LogOut
+              </a>
+            </li>
+
           </ul>
         </nav>
 
@@ -80,72 +94,8 @@
 
 
      <div class="container"  *ngIf="isLoggedIn">
-
-      <div class="row" >
-
-        <div class="col-md-3 "  style="overflow: scroll;overflow-x: hidden;overflow-y: auto;height: 3000px;" >
-
-          <!-- ************************ PROFILE CARD START **************************** -->
-                <div class="card mt-4" style="max-width: 17rem;border-radius: 15px;">
-                  <img class="card-img-top" height="70px" style="object-fit: cover;border-top-left-radius: 15px;border-top-right-radius: 15px;" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Bologna">
-                  <div class="card-body text-center">
-                    <img class="avatar rounded-circle" height="100" width="100" style="object-fit: cover;" src="https://images.unsplash.com/photo-1543132220-3ec99c6094dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Bologna">
-                    <h4 class="" style="margin-bottom:6px ;">{{username}}</h4>
-                    <h6 class="card-subtitle text-muted"  *ngFor="let role of roles" >
-                        <span *ngIf="role == 'ROLE_DOCTOR'" >
-                          <i class="fa fa-stethoscope" style="font-size:11px;color:#E43B20"></i>
-                          DOCTOR
-                        </span>
-                        <span *ngIf="role == 'ROLE_STUDENT'">
-                          <i class="bi bi-person-heart" style="font-size: 13px;color:#E43B20 ;"></i>
-                          STUDENT
-                        </span>
-                        <span *ngIf="role == 'ROLE_USER'">
-                          <i class="fa fa-user-circle" style="font-size:11px;"></i>
-                          USER
-                        </span>
-                    </h6>
-                    <p class="card-text">Robert John Downey Jr.'career has included  </p>
-                    
-                  </div>
-
-                  <div class="card-footer bg-white"  style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;">
-                    <div class="stats">
-                        <div class="stat">
-                          <span class="label">Following</span>
-                          <span class="value">56K</span>
-                        </div>
-                        <div class="stat">
-                          <span class="label">Followers</span>
-                          <span class="value">940</span>
-                        </div>
-                        <div class="stat">
-                          <span class="label">Likes</span>
-                          <span class="value">320</span>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          <!-- ************************ PROFILE CARD END **************************** -->
-
-        
-
-
-        <!-- Dynamic Content -->
-          <div class="col-md-6 ">
-            <mat-drawer-content class="theme_bg_color">
-              <div style="height: 88vh;width: 100%;">
-                <router-outlet></router-outlet>
-              </div>
-            </mat-drawer-content>
-          </div>
-
-
-          <div class="col-md-3 ">
-              <p>TEST</p>
-          </div>
-      </div>
+      <router-outlet></router-outlet>
+      
 
      </div>
 

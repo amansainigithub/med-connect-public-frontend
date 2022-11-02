@@ -26,6 +26,7 @@ import { EmailVerifySuccessComponent } from './email-verify-success/email-verify
 import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { CampaignComponent } from './board-user/campaign/campaign/campaign.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     PasswordChangeSuccessComponent,
     EmailVerifySuccessComponent,
     ResendEmailLinkComponent,
+    CampaignComponent,
   ],
   imports: [
     BrowserModule,
