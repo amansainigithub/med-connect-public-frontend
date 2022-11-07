@@ -84,4 +84,10 @@ export class BoardUserComponent implements OnInit {
   {
     alert("DATA")
   }
+
+  selectFile()
+  {
+    alert("selectFile")
+
+  }
 }
