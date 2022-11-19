@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TokenStorageService } from '../_services/token-storage.service';
 import { UserProfileService } from '../_services/user-profile-service/user-profile.service';
 import { UserService } from '../_services/user.service';
+import { PostboxComponent } from './postBox/postbox/postbox.component';
 
 @Component({
   selector: 'app-board-user',
@@ -25,7 +27,8 @@ export class BoardUserComponent implements OnInit {
   constructor(
             private tokenStorageService: TokenStorageService,
             private spinner: NgxSpinnerService,
-            private ups:UserProfileService
+            private ups:UserProfileService,
+            public dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
@@ -82,12 +85,17 @@ export class BoardUserComponent implements OnInit {
 
   dataSave()
   {
-    alert("DATA")
+    const dialogRef = this.dialog.open(PostboxComponent,{
+      width: '500px',
+      height:'250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`); // Pizza!
+      console.log("AC DATA " + result.fileName)
+    });
   }
 
-  selectFile()
-  {
-    alert("selectFile")
 
-  }
+
 }

@@ -27,6 +27,10 @@ import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CampaignComponent } from './board-user/campaign/campaign/campaign.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { PostboxComponent } from './board-user/postBox/postbox/postbox.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,7 @@ import { CampaignComponent } from './board-user/campaign/campaign/campaign.compo
     EmailVerifySuccessComponent,
     ResendEmailLinkComponent,
     CampaignComponent,
+    PostboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,10 @@ import { CampaignComponent } from './board-user/campaign/campaign/campaign.compo
     NgxSpinnerModule,
      NgxSpinnerModule,
      MatExpansionModule,
-     MatToolbarModule
+     MatToolbarModule,
+     MatDialogModule,
+     MatSnackBarModule,
+     CKEditorModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

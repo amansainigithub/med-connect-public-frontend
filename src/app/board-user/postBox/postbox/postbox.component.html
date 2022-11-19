@@ -1,0 +1,46 @@
+<h1 mat-dialog-title style="font-size: 18px;">Create Post</h1>
+<hr>
+
+<form action=""
+    
+    name="form"
+    (ngSubmit)="f.form.valid && submitPost()"
+    #f="ngForm"
+    novalidate>
+
+    <!-- <textarea style="width: 100%;border: none;outline: none;height: 100px;" 
+            name="password"
+            [(ngModel)]="post.content"
+            required 
+            row="3" placeholder="Ask's for a minding Questions ?" spellcheck="false" required>
+    </textarea> -->
+
+    
+    <div>
+        <img [src]="preview" class="preview">
+      </div>
+
+
+      <!-- <div *ngIf="currentFile && progress" class="progress my-3">
+        <div
+          class="progress-bar progress-bar-info"
+          role="progressbar"
+          attr.aria-valuenow="{{ progress }}"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          [ngStyle]="{ width: progress + '%' }"
+        >
+          {{ progress }}%
+        </div>
+      </div> -->
+
+    <input class="mt-2" type="file" multiple accept="image/*" (change)="selectFile($event)" />
+
+    <div class="mt-3">
+        <button style="width: 100%;" mat-raised-button color="primary">Submit</button>
+    </div>
+
+    
+
+        
+</form>
