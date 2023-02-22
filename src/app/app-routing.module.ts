@@ -12,6 +12,7 @@ import { PasswordChangeSuccessComponent } from './password-change-success/passwo
 import { EmailVerifySuccessComponent } from './email-verify-success/email-verify-success.component';
 import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.component';
 import { CampaignComponent } from './board-user/campaign/campaign/campaign.component';
+import { QuestionsComponent } from './board-user/questionsBox/questions/questions.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
                   //CATEGORY
                   { path: '', component: BoardUserComponent},
                   { path: 'campaign', component: CampaignComponent},
+                  { path: 'questions', component: QuestionsComponent},
       ]
   }
 ];

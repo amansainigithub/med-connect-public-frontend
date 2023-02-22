@@ -1,0 +1,63 @@
+<h1>All Questions</h1>
+
+<hr>
+
+
+<div 
+class="search-resultss"
+ infinite-scroll
+ [infiniteScrollDistance]="scrollDistance"
+ [infiniteScrollUpDistance]="scrollUpDistance"
+ [infiniteScrollThrottle]="throttle"
+ [scrollWindow]="true"
+ (scrolled)="onScrollDown()"
+ (scrolledUp)="onScrollUp()">
+
+ <!-- <div  *ngFor="let i of data" class="mb-5"> 
+   {{ i.content}}<br>
+   {{ i.fileUrl}}
+   <hr>
+ </div> -->
+
+
+ <!-- Cards with media area -->
+
+
+ <div  *ngFor="let i of data" class="mb-1"> 
+
+<!--     
+
+        <a href="" style="text-decoration: none;color: #5D6D7E;">
+            <div class="card p-2" 
+            style="background-color: transparent;border-left: none;
+            border-right:none ;border-top: none;">
+            {{ i.id}}<br>
+            {{ i.content}}<br>
+            {{ i.fileUrl}}
+       </div>
+       </a> -->
+
+       <div class="card p-1"  style="background-color: transparent;border-left: none;
+                                        border-right:none ;border-top: none;">
+        <div class="row">
+
+            <div class="col-md-3">
+                <ul class="list-group list-group-flush" style="font-size: 10px;">
+                    <li class="list-group-item"><span>0</span> Votes</li>
+                    <li class="list-group-item"><span>0</span> answers</li>
+                    <li class="list-group-item"><span>16</span> views</li>
+                  </ul>
+            </div>
+    
+            <div class="col-md-9">
+                    <!-- {{ i.id}}<br> -->
+                {{ i.content}}<br>
+                {{ i.fileUrl}}
+            </div>
+    
+           </div>
+       </div>
+  
+ </div>
+
+</div>

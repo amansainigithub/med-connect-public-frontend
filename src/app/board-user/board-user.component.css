@@ -173,3 +173,8 @@ input[type=text], select {
   pointer-events: none;
 
 }
+
+.search-results {
+  height: 120vh;
+  overflow: scroll;
+}

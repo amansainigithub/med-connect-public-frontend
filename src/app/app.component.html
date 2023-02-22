@@ -42,7 +42,7 @@
       </mat-toolbar> -->
     <!-- </p>   -->
 
-        <nav class="navbar navbar-expand-sm shadow-sm p-3">
+        <nav class="navbar navbar-expand-sm shadow-sm p-3" >
           <a href="#" class="navbar-brand mx-3">Med Connect</a>
 
           <ul class="navbar-nav mr-auto" routerLinkActive="active">
@@ -57,6 +57,8 @@
             </li>
           </ul>
 
+
+          <!-- Is Not Logging in  -->
           <ul class="navbar-nav ml-auto" style="float: left;" *ngIf="!isLoggedIn">
             <li class="nav-item">
               <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
@@ -66,6 +68,8 @@
             </li>
           </ul>
 
+
+              <!-- Is Logging in  -->
           <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
             
             <li class="nav-item">
@@ -83,7 +87,7 @@
 
             <li class="nav-item">
               <a href class="nav-link" (click)="logout()">
-                LogOut
+                Logout
               </a>
             </li>
 
@@ -93,13 +97,59 @@
 
 
 
-     <div class="container"  *ngIf="isLoggedIn">
-      <router-outlet></router-outlet>
-      
+     <div class="container mt-4" style="max-width: 1200px;"  *ngIf="isLoggedIn">
 
+      <div class="row" >
+
+          <div class="col-md-2" style="border-right: 0.5px solid #CCD1D1;height: 550px;width: 200px;">
+
+
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action active" routerLink="/user/campaign" aria-current="true">
+                <i class="fa fa-home" style="font-size:16px"></i>
+                Home
+              </a>
+              <a href="#" class="list-group-item list-group-item-action"  routerLink="/user/questions">
+                <i class="fa fa-question text-dark" style="font-size:16px" aria-hidden="true"></i>
+                Questions
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="fa fa-hospital-o" style="font-size:16px"></i>
+                Hospitals
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-book-half"></i>
+                Internships
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-person-circle"></i>
+                Profile
+              </a>
+              <a href="#" class="list-group-item list-group-item-action">
+                <i class="bi bi-person-circle"></i>
+                About
+              </a>
+          </div>
+      
+        </div>
+
+        <div class="col-md-7">
+          <router-outlet></router-outlet>
+        </div>
+
+        <div class="col-md-3">
+          AA
+        </div>
+
+      </div>
+
+      
      </div>
 
-     <div  *ngIf="!isLoggedIn">
+
+
+
+     <div *ngIf="!isLoggedIn">
         <router-outlet></router-outlet>
      </div>
 

@@ -1,3 +1,12 @@
 .preview {
-    max-width: 200px;
+    max-width: 300px;
+    object-fit: cover;
   }
+
+  input::file-selector-button {
+    font-weight: bold;
+    color: #5D6D7E;
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
+}

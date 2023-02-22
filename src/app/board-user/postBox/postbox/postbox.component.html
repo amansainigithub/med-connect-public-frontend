@@ -1,19 +1,37 @@
-<h1 mat-dialog-title style="font-size: 18px;">Create Post</h1>
-<hr>
+<div>
+<!--   
+  <button mat-button mat-dialog-close>
+    <i class="bi bi-x" style="font-size: 28px;"></i>
+  </button> -->
+
+  <h1 mat-dialog-title style="font-size: 18px;"> 
+     Ask Questions
+  </h1>
+
+  <hr>
+</div>
 
 <form action=""
-    
     name="form"
     (ngSubmit)="f.form.valid && submitPost()"
     #f="ngForm"
     novalidate>
 
-    <!-- <textarea style="width: 100%;border: none;outline: none;height: 100px;" 
+    <div class="mb-3">
+      <input 
+      type="text" 
+      [(ngModel)]="post.title"
+      name="title"
+      class="form-control" 
+      autocomplete="off" 
+      placeholder="Question Title" >
+    </div>
+
+    <textarea style="width: 100%;border: none;outline: none;height: 100px;font-size: 20px;" 
             name="password"
             [(ngModel)]="post.content"
-            required 
-            row="3" placeholder="Ask's for a minding Questions ?" spellcheck="false" required>
-    </textarea> -->
+            row="5" placeholder=" Question Content ?" spellcheck="false">
+    </textarea>
 
     
     <div>
@@ -34,13 +52,20 @@
         </div>
       </div> -->
 
-    <input class="mt-2" type="file" multiple accept="image/*" (change)="selectFile($event)" />
-
-    <div class="mt-3">
-        <button style="width: 100%;" mat-raised-button color="primary">Submit</button>
-    </div>
 
     
+     <hr>   
+     <input type="file" multiple accept="image/*" (change)="selectFile($event)" />
 
-        
+    <mat-dialog-actions align="end" >
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button type="submit" mat-button mat-stroked-button  [mat-dialog-close]="true" cdkFocusInitial>
+        Ask Question
+        <i class="fa fa-question text-dark" style="font-size:16px" aria-hidden="true"></i>
+      </button>
+    </mat-dialog-actions>
+
+   
 </form>
+
+

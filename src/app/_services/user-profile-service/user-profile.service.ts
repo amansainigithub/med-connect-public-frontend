@@ -21,4 +21,14 @@ export class UserProfileService {
 
 
 
+  getPostsService(page:any)
+    {
+      // return this.http.get(this.API_URL.API_URL+ "/getAllPosts");
+      return this.http.get(this.API_URL.API_URL+ "/getQuestions/"+page);
+     
+    }
+
+
+
+
 }

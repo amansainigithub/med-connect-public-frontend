@@ -24,6 +24,7 @@
     "@ckeditor/ckeditor5-build-classic": "^35.3.1",
     "@ckeditor/ckeditor5-upload": "^35.3.1",
     "bootstrap-icons": "^1.9.1",
+    "ngx-infinite-scroll": "^13.0.0",
     "ngx-spinner": "^13.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

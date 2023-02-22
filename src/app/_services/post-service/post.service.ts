@@ -15,11 +15,27 @@ export class PostService {
     private API_URL:ApiUrlService, 
     private http: HttpClient) { }
 
-    submitPostService(file: File):any {
-      console.log("service run.....")
+    submitPostService(file: File,post:any):any {
+      console.log("service run....." + post)
+      console.log( post)
+
       const formData: FormData = new FormData();
-      formData.append('file', file);
-      formData.append('jsonNode',JSON.stringify(this.nodeObj))
-      return this.http.post(this.API_URL.API_URL+ "/submitPost",formData);
+
+      if(file == null)
+      {
+        console.log("File is Empty");
+        formData.append('file', "");
+        formData.append('jsonNode',JSON.stringify(post))
+        return this.http.post(this.API_URL.API_URL+ "/addQuestions",formData);
+      }
+      else{
+        formData.append('file', file);
+      formData.append('jsonNode',JSON.stringify(post))
+      return this.http.post(this.API_URL.API_URL+ "/addQuestions",formData);
+      }
+
     }
+
+
+    
 }

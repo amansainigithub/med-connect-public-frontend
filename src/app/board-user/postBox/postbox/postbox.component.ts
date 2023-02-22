@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PostService } from 'src/app/_services/post-service/post.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
@@ -14,7 +15,8 @@ export class PostboxComponent implements OnInit {
   constructor(private ps:PostService,
               private tokenStorage: TokenStorageService,
               private _snackBar: MatSnackBar ,
-              public dialogRef: MatDialogRef<PostboxComponent>
+              public dialogRef: MatDialogRef<PostboxComponent>,
+              private spinner: NgxSpinnerService
               ) { }
 
   ngOnInit(): void {
@@ -22,7 +24,8 @@ export class PostboxComponent implements OnInit {
 
   post: any = {
     content: null,
-    userId:""
+    userId:"",
+    title: null,
   };
 
   preview: string = '';
@@ -49,26 +52,43 @@ export class PostboxComponent implements OnInit {
 
   submitPost()
   {
-    //alert("working");
+     //Sprinner show
+     this.spinner.show();
+
+   // alert("working");
     if(this.tokenStorage.getUser().id == null || this.tokenStorage.getUser().id == undefined)
     {
       return alert("user ID is empty");
     }
 
-    this.post.userId = this.tokenStorage.getUser().id;
+      this.post.userId = this.tokenStorage.getUser().id;
 
-      this.ps.submitPostService(this.file).subscribe({
+      this.ps.submitPostService(this.file,this.post).subscribe({
         next:(res:any)=>{
           console.log("successor Res : " + res);
-          this._snackBar.open('post success', 'Undo', {
-            duration: 3000
+          this._snackBar.open('Upload Success', 'cancle', {
+            duration: 2000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['blue-snackbar']
           });
           this.dialogRef.close(res);
+
+          //Sprinner show
+          this.spinner.hide();
+
         },error:(err:any)=>{
           console.log(err.roor.message);
+          
+          //Sprinner show
+          this.spinner.hide();
         }
       })
   }
+
+
+  
+
 
 
   

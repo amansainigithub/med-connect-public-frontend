@@ -23,13 +23,16 @@ export class BoardUserComponent implements OnInit {
   imageSrc: string = '';
   file:any;
   profileUrl:any;
+  posts:any;
 
   constructor(
             private tokenStorageService: TokenStorageService,
             private spinner: NgxSpinnerService,
             private ups:UserProfileService,
             public dialog: MatDialog
-    ) { }
+    ) { 
+      
+    }
 
   ngOnInit(): void {
     /** spinner starts on init */
@@ -39,11 +42,12 @@ export class BoardUserComponent implements OnInit {
       /** spinner ends after 5 seconds */
     //   this.spinner.hide();
     // }, 5000);
+
+    this.getAllPosts();
   
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
-      
       
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
@@ -63,7 +67,6 @@ export class BoardUserComponent implements OnInit {
 
 
   onChange(event:any){
-
     const reader = new FileReader();
     if(event.target.files && event.target.files.length) {
       const [file] = event.target.files;
@@ -86,16 +89,55 @@ export class BoardUserComponent implements OnInit {
   dataSave()
   {
     const dialogRef = this.dialog.open(PostboxComponent,{
-      width: '500px',
-      height:'250px'
+      width: '800px',
+      height:'370px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`); // Pizza!
+      console.log(`Dialog result: ${result}`);
       console.log("AC DATA " + result.fileName)
     });
   }
 
+  data:any = [];
+  contentArray =[];
+  sum = 20;
+  throttle = 20;
+  scrollDistance = 1;
+  scrollUpDistance = 2;
+  direction = "";
+  modalOpen = false;
+  page = 0;
 
+
+  onScrollDown() {
+    console.log("scrolled Down!!");
+    this.page+=1;
+    this.getAllPosts();
+  }
+
+  onScrollUp() {
+    console.log("onScrollUp!!");
+  }
+
+
+  async  getAllPosts()
+  {
+    console.log("Page Number " + this.page)
+    this.ups.getPostsService(this.page).subscribe({
+      next:(res:any)=>{
+        this.contentArray = res.content;
+        this.contentArray.forEach((e:any)=>{
+          this.data.push(e);
+        })
+        //this.data = res;
+        console.log(res);
+      },error:(err:any)=>{
+        console.log(err.roor.message);
+      }
+    })
+  }
+
+  
 
 }

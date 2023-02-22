@@ -31,6 +31,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { PostboxComponent } from './board-user/postBox/postbox/postbox.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { QuestionsComponent } from './board-user/questionsBox/questions/questions.component';
+
 
 @NgModule({
   declarations: [
@@ -48,6 +51,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     ResendEmailLinkComponent,
     CampaignComponent,
     PostboxComponent,
+    QuestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
      MatToolbarModule,
      MatDialogModule,
      MatSnackBarModule,
-     CKEditorModule
+     CKEditorModule,
+     InfiniteScrollModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
