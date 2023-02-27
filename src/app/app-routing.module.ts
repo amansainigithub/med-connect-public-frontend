@@ -14,6 +14,7 @@ import { ResendEmailLinkComponent } from './resend-email-link/resend-email-link.
 import { CampaignComponent } from './board-user/campaign/campaign/campaign.component';
 import { QuestionsComponent } from './board-user/questionsBox/questions/questions.component';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },

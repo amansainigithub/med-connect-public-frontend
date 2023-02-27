@@ -11,8 +11,6 @@ import { UserProfileService } from 'src/app/_services/user-profile-service/user-
 })
 export class QuestionsComponent {
 
-  
-
   constructor(
     private tokenStorageService: TokenStorageService,
     private spinner: NgxSpinnerService,
@@ -36,9 +34,11 @@ export class QuestionsComponent {
   scrollUpDistance = 2;
   direction = "";
   modalOpen = false;
+  isLoading = true;
   page = 0;
 
   onScrollDown() {
+    this.isLoading = true;
     console.log("scrolled Down!!");
     this.page+=1;
     this.getQuestions();
@@ -49,19 +49,32 @@ export class QuestionsComponent {
   }
 
 
-  async  getQuestions()
+  async getQuestions()
   {
-    console.log("Page Number " + this.page)
+    console.log("Page Number " + this.page);
+
+    //Sprinner show
+    // this.spinner.show();
+
     this.ups.getPostsService(this.page).subscribe({
       next:(res:any)=>{
-        this.contentArray = res.content;
+
+        this.contentArray = res;
         this.contentArray.forEach((e:any)=>{
           this.data.push(e);
         })
+        this.isLoading = false;
         //this.data = res;
         console.log(res);
+
+        
+        //Sprinner hide
+        // this.spinner.hide();
       },error:(err:any)=>{
         console.log(err.roor.message);
+          this.isLoading = false;
+        //Sprinner show
+      //   this.spinner.hide();
       }
     })
   }
