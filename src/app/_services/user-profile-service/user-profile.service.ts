@@ -7,7 +7,8 @@ import { ApiUrlService } from '../api-urls/api-url.service';
 })
 export class UserProfileService {
 
-  constructor( private API_URL:ApiUrlService, 
+  constructor( 
+    private API_URL:ApiUrlService, 
     private http: HttpClient) { }
 
 
@@ -27,6 +28,15 @@ export class UserProfileService {
       return this.http.get(this.API_URL.API_URL+ "/getQuestions/"+page);
      
     }
+
+    question_vote_up_and_down_service(voteUpAndDownJson:any)
+    {
+      return this.http.post(this.API_URL.API_URL+ "/voteUpAndDown",voteUpAndDownJson);
+    }
+
+
+   
+
 
 
 

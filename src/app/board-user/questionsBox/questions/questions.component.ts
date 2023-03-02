@@ -22,6 +22,8 @@ export class QuestionsComponent {
 
   ngOnInit(): void {
     this.getQuestions();
+
+    
   }
 
 
@@ -78,5 +80,50 @@ export class QuestionsComponent {
       }
     })
   }
+
+
+  box:any = false;
+  progressBar:any = false;
+  //Working on Vote Up and Vote Down
+  voteUp:any = 0;
+  voteUpAndDownJson:any = {
+    userId : null,
+    questionId : null,
+    voteResult : null
+    } ;
+
+  question_vote_up_and_down(id:any , up_and_down:any , event:any)
+  {
+      this.box = true;
+      this.progressBar = true;
+
+       console.log("vote Up working..." + up_and_down) ;
+       this.voteUpAndDownJson.userId = this.tokenStorageService.getUser().id
+       this.voteUpAndDownJson.questionId = id;
+       this.voteUpAndDownJson.voteResult = up_and_down;
+
+       this.ups.question_vote_up_and_down_service(this.voteUpAndDownJson).subscribe({
+       next:(res:any)=>{
+        console.log("Response ::  " + res);
+          
+        setTimeout(() => {
+          this.box = false;
+          this.progressBar = false;
+          }, 1000);
+
+        },error:(err:any)=>{
+          console.log(err.roor.message);
+            
+            setTimeout(() => {
+              this.box = false;
+              this.progressBar = false;
+              }, 1000);
+            }
+    })
+  }
+
+
+  
+
 
 }

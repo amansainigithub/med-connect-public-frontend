@@ -6,7 +6,7 @@
 
 .timer
 {
-    background-color: #F9EBEA;
+    background-color: #CCD1D1;
     font-size: 10px;
     padding: 1px;
     border-radius: 3px;
@@ -61,4 +61,31 @@
 .tooltip1:hover .tooltiptext1 {
   visibility: visible;
   opacity: 1;
+}
+
+
+
+
+/* CSS */
+.voteUp-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #F7F9F9;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 
+              inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 
+              0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: black;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.voteUp-button:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 
+            0px 0.5px 1px rgba(0, 0, 0, 0.1),
+            0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
 }

@@ -34,6 +34,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { QuestionsComponent } from './board-user/questionsBox/questions/questions.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { AnswerComponent } from './board-user/answerBox/answer/answer.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CampaignComponent,
     PostboxComponent,
     QuestionsComponent,
+    AnswerComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
      MatSnackBarModule,
      CKEditorModule,
      InfiniteScrollModule,
-     MatProgressSpinnerModule
+     MatProgressSpinnerModule,
+     MatProgressBarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

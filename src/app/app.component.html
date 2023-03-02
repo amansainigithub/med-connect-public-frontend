@@ -42,7 +42,9 @@
       </mat-toolbar> -->
     <!-- </p>   -->
 
-        <nav class="navbar navbar-expand-sm shadow-sm p-3" >
+
+    <!-- NEW COMMENT 02-03-2023 -->
+        <!-- <nav class="navbar navbar-expand-sm shadow-sm p-3" >
           <a href="#" class="navbar-brand mx-3">Med Connect</a>
 
           <ul class="navbar-nav mr-auto" routerLinkActive="active">
@@ -58,7 +60,7 @@
           </ul>
 
 
-          <!-- Is Not Logging in  -->
+        
           <ul class="navbar-nav ml-auto" style="float: left;" *ngIf="!isLoggedIn">
             <li class="nav-item">
               <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
@@ -69,7 +71,7 @@
           </ul>
 
 
-              <!-- Is Logging in  -->
+              
           <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
             
             <li class="nav-item">
@@ -80,7 +82,7 @@
 
             <li class="nav-item">
               <a href="/profile" class="nav-link" routerLink="profile">
-                <!-- {{ username }} -->
+                {{ username }} 
                 Profile
               </a>
             </li>
@@ -92,24 +94,61 @@
             </li>
 
           </ul>
+        </nav> -->
+
+
+
+
+
+        <!-- New Navbar 02-03-2023 -->
+        <nav class="fixed-nav-bar">
+
+          <a class="brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Poundexclam.svg/2000px-Poundexclam.svg.png" />
+            Med Connect
+          </a>
+          
+              <a  *ngIf="showAdminBoard" href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+              <a *ngIf="showModeratorBoard" href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+              <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="/">Home</a>
+            
+
+          <!-- Is Not Logging in  -->
+              <a *ngIf="!isLoggedIn" href="/register" class="nav-link" routerLink="register">Sign Up</a>
+              <a *ngIf="!isLoggedIn"  href="/login" class="nav-link" routerLink="login">Login</a>
+           
+
+
+              <!-- Is Logging in  -->
+              <a *ngIf="isLoggedIn" href="/profile" class="nav-link" routerLink="/user/campaign">
+                Campaign
+              </a>
+              <a *ngIf="isLoggedIn" href="/profile" class="nav-link" routerLink="profile">
+                <!-- {{ username }} -->
+                Profile
+              </a>
+              <a *ngIf="isLoggedIn" href class="nav-link" (click)="logout()">
+                Logout
+              </a>
+
         </nav>
+         <!-- New Navbar 02-03-2023 !-->
+        
 
 
-
-
-     <div class="container mt-4" style="max-width: 1200px;"  *ngIf="isLoggedIn">
+     <div class="container " *ngIf="isLoggedIn" style="margin-top: 60px;">
 
       <div class="row" >
 
-          <div class="col-md-2" style="border-right: 0.5px solid #CCD1D1;height: 550px;width: 200px;">
+          <div class="col-md-2" style="border-right: 0.5px solid #CCD1D1;height: 550px;width: 200px;position: fixed;">
 
 
             <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action active" routerLink="/user/campaign" aria-current="true">
+              <a href="#" class="list-group-item list-group-item-action" routerLink="/user/campaign" aria-current="true">
                 <i class="fa fa-home" style="font-size:16px"></i>
                 Home
               </a>
-              <a href="#" class="list-group-item list-group-item-action"  routerLink="/user/questions">
+              <a href="#" class="list-group-item list-group-item-action"  routerLink="/user/all_questions">
                 <i class="fa fa-question text-dark" style="font-size:16px" aria-hidden="true"></i>
                 Questions
               </a>
@@ -133,7 +172,7 @@
       
         </div>
 
-        <div class="col-md-7">
+        <div class="col-md-7 offset-md-2" style="position: relative;">
           <router-outlet></router-outlet>
         </div>
 
