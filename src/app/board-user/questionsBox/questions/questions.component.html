@@ -1,18 +1,5 @@
 
-<div id="aman" *ngIf="box" 
-      style=" height: 50px;
-              width: 550px;
-              margin: auto;
-              text-align: center;
-              background-color: #EAF2F8;
-              padding: 9px;
-              position: fixed;
-              border-radius: 7px;
-              top: 50%;
-              left: 50%;
-              margin-left: -220px;
-              margin-top: -260px;
-              z-index: 111111111111111;">
+<div id="aman" *ngIf="box" class="feedbackBox" >
   <p class="fontSize10">
    <span><i class="bi bi-circle-fill" style="font-size: 5px;color: #5767EE;"></i></span>
     <span style="color: black;">
@@ -144,8 +131,11 @@
                                   role="button"
                                   style="background-color: #FDEDEC;">
                             <span class="bi bi-arrow-down-short fontSize12"> 
-                              <span class="fontSize9">
+                              <span *ngIf="i.voteDownCount == 0" class="fontSize9">
                                 {{i.voteDownCount}}
+                              </span>
+                              <span *ngIf="i.voteDownCount != 0" class="fontSize9">
+                                -{{i.voteDownCount}}
                               </span>
                             </span>
                           </button>

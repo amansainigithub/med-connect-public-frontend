@@ -89,3 +89,20 @@
             0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
 }
+
+.feedbackBox
+{
+              height: 50px;
+              width: 550px;
+              margin: auto;
+              text-align: center;
+              background-color: #EAF2F8;
+              padding: 9px;
+              position: fixed;
+              border-radius: 7px;
+              top: 50%;
+              left: 50%;
+              margin-left: -220px;
+              margin-top: -260px;
+              z-index: 11111111111111111111111111111111;
+}
